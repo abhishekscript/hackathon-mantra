@@ -24,10 +24,10 @@ def test():
 @app.route("/transactions",methods=['GET','POST'])
 def transaction():
 	try:
-		user_id = request.form['userid']
-		amount  = float(request.form['amount'])
-		remarks = request.form['remarks']
-		product_id = request.form['product_id']
+		user_id = request.json['userid']
+		amount  = float(request.json['amount'])
+		remarks = request.json['remarks']
+		product_id = request.json['product_id']
 		userCollection = caterdb.transactions
 		userCollection.insert({"product_id" : product_id , "user_id" : user_id , "amount" : amount , "remarks" : remarks,"createdAt" : datetime.now(),"status" : False })
 		adminCollection = caterdb.admin
