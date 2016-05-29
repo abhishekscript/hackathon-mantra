@@ -70,7 +70,7 @@ def autoPunch():
 		if request.json['status'] == 'in':
 			email = request.json['email']
 			password = request.json['password']
-			driver =webdriver.Firefox()
+			driver =webdriver.PhantomJS()
 			print driver, "driver"
 			driver.get("http://hr.mantralabsglobal.com")
 			elem = driver.find_element_by_name("txtUsername")
