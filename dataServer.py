@@ -31,7 +31,7 @@ def transaction():
 		userCollection = caterdb.transactions
 		userCollection.insert({"product_id" : product_id , "user_id" : user_id , "amount" : amount , "remarks" : remarks,"createdAt" : datetime.now(),"status" : False })
 		adminCollection = caterdb.admin
-		adminCollection.update({ "user" : "ramesh" },{  "$inc" : {  "revenue" : amount   }  })
+		adminCollection.update({ "user" : "ramesh" },{  "$inc" : {  "revenue" : float(amount)   }  })
 		return jsonify({"status" : 200 , "message" : "transaction successful" })
 	except Exception as e:
 		return jsonify({"status" : 400 , "message" : str(e) })
