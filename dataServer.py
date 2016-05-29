@@ -158,6 +158,9 @@ def profile():
 			return render_template("profile.html")
 	#except:
 #		return redirect("/")
+@app.route("/login.html")
+def logout():
+	return redirect("/logout")
 
 @app.route("/dashboard")
 def dashboard():
