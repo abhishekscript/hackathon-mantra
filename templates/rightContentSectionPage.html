@@ -178,7 +178,9 @@
         			var data = { "name" : $('#item_name').val() , "price" : $('#item_amount').val() , "category" : $('#item_category').val() , "image" : $('#item_image').val()  };
         				$.post('/item/add',data).done(function(data) {
         						if(data.status==200){
-
+        								alert("Successfully Added");
+        								location.reload();
+        						}else{
         						}
         				console.log(data);
         				});
