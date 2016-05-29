@@ -99,6 +99,9 @@ def adminLogin():
 		m.update(request.form['password'].encode('utf-8'))
 		password = m.hexdigest()
 		userCollection = caterdb.admin
+		cursor = userCollection.find()
+		for x in cursor:
+			print x
 		result = userCollection.find_one({ "user" : request.form['user'], "password" : password } )
 		print request.form['user'], password
 		print result
