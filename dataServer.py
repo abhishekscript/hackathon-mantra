@@ -74,13 +74,14 @@ def autoPunch():
 			print driver, "driver"
 			driver.get("http://hr.mantralabsglobal.com")
 			elem = driver.find_element_by_name("txtUsername")
-			print elem,"Some element"
+			print elem,"Some element`"
 			#elem.send_keys("abhishek.rana@mantralabsglobal.com")
 			elem.send_keys(email)
 			elemPass = driver.find_element_by_name("txtPassword")
 			#elemPass.send_keys("abc123")
 			elemPass.send_keys(password)
 			elemBtnLogin = driver.find_element_by_id("btnLogin")
+			print elemBtnLogin, "Punch In id"
 			elemBtnLogin.send_keys(Keys.RETURN)
 			time.sleep(6)
 			driver.get("http://hr.mantralabsglobal.com/symfony/web/index.php/attendance/punchIn")
