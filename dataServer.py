@@ -101,6 +101,7 @@ def adminLogin():
 		userCollection = caterdb.admin
 		result = userCollection.find_one({ "user" : request.form['user'], "password" : password } )
 		print request.form['user'], password
+		print result
 		if result is None:
 			return jsonify({"status" : 400 , "message" : "invalid login" })
 		session['userdetails'] = {"user" : request.form['user'] }
