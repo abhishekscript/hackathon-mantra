@@ -86,6 +86,7 @@ def autoPunch():
 			time.sleep(6)
 			driver.get("http://hr.mantralabsglobal.com/symfony/web/index.php/attendance/punchIn")
 			elemPunchInBtn = driver.find_element_by_id("btnPunch")
+			print elemPunchInBtn, "Punch in id 2"
 			time.sleep(10)
 			elemPunchInBtn.send_keys(Keys.RETURN)
 			print elemPunchInBtn , "PUNCH BUTTON ______________________$$$$$$$"
