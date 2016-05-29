@@ -71,8 +71,10 @@ def autoPunch():
 			email = request.json['email']
 			password = request.json['password']
 			driver =webdriver.Firefox()
+			print driver, "driver"
 			driver.get("http://hr.mantralabsglobal.com")
 			elem = driver.find_element_by_name("txtUsername")
+			print elem,"Some element"
 			#elem.send_keys("abhishek.rana@mantralabsglobal.com")
 			elem.send_keys(email)
 			elemPass = driver.find_element_by_name("txtPassword")
