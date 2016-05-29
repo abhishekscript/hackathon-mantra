@@ -70,7 +70,7 @@ def autoPunch():
 		if request.json['status'] == 'in':
 			email = request.json['email']
 			password = request.json['password']
-			driver =webdriver.Firefox()
+			driver =webdriver.PhantomJS()
 			driver.get("http://hr.mantralabsglobal.com")
 			elem = driver.find_element_by_name("txtUsername")
 			#elem.send_keys("abhishek.rana@mantralabsglobal.com")
@@ -83,9 +83,10 @@ def autoPunch():
 			time.sleep(6)
 			driver.get("http://hr.mantralabsglobal.com/symfony/web/index.php/attendance/punchIn")
 			elemPunchInBtn = driver.find_element_by_id("btnPunch")
-			time.sleep(10)
+			time.sleep(10) 
 			elemPunchInBtn.send_keys(Keys.RETURN)
 			print elemPunchInBtn , "PUNCH BUTTON ______________________$$$$$$$"
+			driver.quit()
 			return jsonify({"status" : 200 })
 		else:
 			return jsonify({"status"  : 200 })
