@@ -548,7 +548,9 @@
                                 Food Orders 
                             </div>
                             <div class="panel-body">
-                                Abhishek
+                               <table class='table' id="orderList">
+
+                               </table>
                             </div>
                         </div>
                     </div>
@@ -641,7 +643,7 @@
     function getTransactionHistory() {
          $.get('/transactions/details').done(function(data) {
             if(data.status == 200 ) {
-                    //
+                    console.log("transactions details ", data);
             } else {
                 console.log(data);
             }     
