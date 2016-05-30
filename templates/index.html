@@ -638,12 +638,20 @@
                 }else{
                     console.log(data);
                 }
+                getTransactionHistory();
         });
     }
     function getTransactionHistory() {
          $.get('/transactions/details').done(function(data) {
+            var dynmaicFoodOrders = "<tr><th>Name</th>Amount<th>Time</th><th>status</th></tr>";
             if(data.status == 200 ) {
-                    console.log("transactions details ", data);
+                    var data = data.data;
+                    var i=0;
+                    var len = data.length;
+                    for( ; i<len; i++ ) {
+                        dynmaicFoodOrders = dynmaicFoodOrders + "<tr><td>" + dynmaicFoodOrders[i].user_id +"</td><td>" +dynmaicFoodOrders[i].amount+ "</td><td>" + dynmaicFoodOrders[i].createdAt + "</td><td>" + dynmaicFoodOrders[i].status +"</td></tr>";
+                    }
+                    document.getElementById('orderList').innerHTML = dynmaicFoodOrders;
             } else {
                 console.log(data);
             }     
@@ -663,7 +671,7 @@
     $(document).ready(function(){
     
        getUserList();
-       getTransactionHistory();
+     //  getTransactionHistory();
        getRevenue();
     });
     </script>
