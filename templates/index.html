@@ -643,7 +643,7 @@
     }
     function getTransactionHistory() {
          $.get('/transactions/details').done(function(data) {
-            var dynmaicFoodOrders = "<tr><th>Name</th>Amount<th>Time</th><th>status</th></tr>";
+            var dynmaicFoodOrders = "<tr><th>Name</th><th>Amount</th><th>Time</th><th>status</th></tr>";
             if(data.status == 200 ) {
                     var data = data.data;
                     var i=0;
