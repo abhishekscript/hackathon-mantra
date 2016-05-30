@@ -649,7 +649,7 @@
                     var i=0;
                     var len = data.length;
                     for( ; i<len; i++ ) {
-                        dynmaicFoodOrders = dynmaicFoodOrders + "<tr><td>" + dynmaicFoodOrders[i].user_id +"</td><td>" +dynmaicFoodOrders[i].amount+ "</td><td>" + dynmaicFoodOrders[i].createdAt + "</td><td>" + dynmaicFoodOrders[i].status +"</td></tr>";
+                        dynmaicFoodOrders = dynmaicFoodOrders + "<tr><td>" + data[i].user_id +"</td><td>" +data[i].amount+ "</td><td>" + data[i].createdAt + "</td><td>" + data[i].status +"</td></tr>";
                     }
                     document.getElementById('orderList').innerHTML = dynmaicFoodOrders;
             } else {
