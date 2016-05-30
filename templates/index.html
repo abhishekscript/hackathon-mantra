@@ -501,7 +501,7 @@
 								</div>
 								<div class="text-box">
 									<p class="maindata">Unsettled <b>Dispute</b></p>
-									<h2><span class="animate-number" data-value="18648" data-duration="3000">0</span></h2>
+									<h2><span class="animate-number" id="orders">0</span></h2>
 									<div class="clearfix"></div>
 								</div>
 							</div>
@@ -652,6 +652,7 @@
                         dynmaicFoodOrders = dynmaicFoodOrders + "<tr><td>" + data[i].user_id +"</td><td>" +data[i].amount+ "</td><td>" + data[i].createdAt + "</td><td>" + data[i].status +"</td></tr>";
                     }
                     document.getElementById('orderList').innerHTML = dynmaicFoodOrders;
+                    document.getElementById('orders').innerHTML = i;
             } else {
                 console.log(data);
             }     
