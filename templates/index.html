@@ -631,8 +631,9 @@
                     var i=0;
                      for(; i<len;i++) {
                         dynamicUsers = dynamicUsers + "<tr><td>"+i+"</td><td>"+data[i].Name+"</td><td>"+data[i].Mobile+"</td></tr>";
-
-                        userid.push( {  data[i].s : data[i].Name } )
+                        var k = {}
+                        k[data[i].s] = data[i].name
+                        userid.push( k );
                      }
                      console.log(dynamicUsers);
                     // alert(dynamicUsers)
