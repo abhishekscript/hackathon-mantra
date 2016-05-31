@@ -655,7 +655,8 @@
                     var len = data.length;
                     for( ; i<len; i++ ) {
 
-
+                        name = useridbox[data[i].user_id];
+                        console.log("Name", name);
 
                         dynmaicFoodOrders = dynmaicFoodOrders + "<tr><td>" + data[i].user_id +"</td><td>" +data[i].amount+ "</td><td>" + data[i].createdAt + "</td><td>";
                         if(data[i].status)
