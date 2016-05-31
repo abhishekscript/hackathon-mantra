@@ -632,7 +632,7 @@
                      for(; i<len;i++) {
                         dynamicUsers = dynamicUsers + "<tr><td>"+i+"</td><td>"+data[i].Name+"</td><td>"+data[i].Mobile+"</td></tr>";
                         var k = {}
-                        k[data[i].s] = data[i].name
+                        k[data[i].s] = data[i].Name
                         userid.push( k );
                      }
                      console.log(dynamicUsers);
@@ -654,6 +654,12 @@
                     var i=0;
                     var len = data.length;
                     for( ; i<len; i++ ) {
+
+                        for(var j=0; j<userid.length; j++) {
+                            if( Object.keys(userid[j].user_id)[0] == data[i].user_id )
+                                console.log("Similar");
+                        }
+
                         dynmaicFoodOrders = dynmaicFoodOrders + "<tr><td>" + data[i].user_id +"</td><td>" +data[i].amount+ "</td><td>" + data[i].createdAt + "</td><td>";
                         if(data[i].status)
                             dynmaicFoodOrders = dynmaicFoodOrders+"<label class='btn btn-success'>Done</label>"
