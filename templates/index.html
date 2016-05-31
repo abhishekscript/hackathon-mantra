@@ -638,10 +638,11 @@
                     // alert(dynamicUsers)
                      $('#exp').html(i);
                      document.getElementById('customerListTable').innerHTML = dynamicUsers  ;   
+                    getTransactionHistory();
                 }else{
                     console.log(data);
                 }
-                getTransactionHistory();
+                
         });
     }
     function getTransactionHistory() {
