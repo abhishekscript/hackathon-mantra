@@ -621,7 +621,7 @@
 	<script src="/static/assets/libs/jquery/jquery-1.11.1.min.js"></script>
      <script>
     var baseUrl = "http://52.77.181.79:1337";
-    var userid = {};
+    var userid = [];
     function getUserList() {
          $.get(baseUrl+'/user/list').done(function(data) {
                 var dynamicUsers= "<th>#</th><th>Name</th><th>Phone</th>";
@@ -632,7 +632,7 @@
                      for(; i<len;i++) {
                         dynamicUsers = dynamicUsers + "<tr><td>"+i+"</td><td>"+data[i].Name+"</td><td>"+data[i].Mobile+"</td></tr>";
 
-                        userid[ data[i].s ] = data[i].name; 
+                        userid.push( {  data[i].s : data[i].Name } )
                      }
                      console.log(dynamicUsers);
                     // alert(dynamicUsers)
@@ -660,7 +660,7 @@
                             dynmaicFoodOrders = dynmaicFoodOrders+"<label class='btn btn-warning'>Request</label>"
 
                          dynmaicFoodOrders= dynmaicFoodOrders + "</td></tr>";
-                         console.log(userid.data[i].user_id, "fix eve");
+                        console.log(userid);
                     }
                     document.getElementById('orderList').innerHTML = dynmaicFoodOrders;
                     document.getElementById('orders').innerHTML = i;
